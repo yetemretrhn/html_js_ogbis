@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var tckimlik=["11223344556","12345665432","98765567892","13579975311"];
+        var ad=["Aslı","Mehmet","Derya","Sedat"];
+        var soyad=["KARA", "UZUN", "DEMİR","SERT"];
+        var email=["aslikara@msn.com","muzun@google.com.tr","demirderya@yahoo.com","sedatsert@hotmail.com"];
+        var telefon = ["532 544 89 99","505 325 44 70","537 888 23 00","541 777 54 29"];
+        var bolum= ["Bilgisayar", "Makina","YBS","Tıp"];
+        var dyeri=["İstanbul","Artvin", "Aydın","Denizli"];
+        var vize=[100,50,75,90];
+        var final=[100,50,70,90];
+        
+        function giris(){
+        var gir=parseInt(prompt("TÜM LİSTE İÇİN 1, TC İLE ARAMA İÇİN 2, ÖĞRENCİ EKLEME İÇİN 3 YAZINIZ.(YENİ İŞLEM İÇİN SAYFAYI YENİLE...)"));
+
+        if(gir==1){
+            document.write("Tüm Öğrenciler Listeleniyor");
+            
+
+        for (var deg=0; deg<tckimlik.length;deg++){
+            var notOrtalamasi=((vize[deg]*40/100)+(final[deg]*60/100));
+            var durum="";
+
+            if (notOrtalamasi>=50){
+                durum="GEÇTİNİZ";
+
+            }
+            else{
+                durum="KALDINIZ";
+            }
+
+            document.write(  "TC : " + tckimlik[deg] + "<br>" +
+                        "Adı: " + ad[deg] + "<br>" +
+                        "Soyadı: " + soyad[deg] + "<br>" +
+                        "E-mail: " + email[deg] + "<br>" +
+                        "Telefon: " + telefon[deg] + "<br>" +
+                        "Bölüm: " + bolum[deg] + "<br>" +
+                        "Doğum Yeri: " + dyeri[deg] + "<br>" +
+                        "Not Ortalaması: " + notOrtalamasi.toFixed(2) + "<br>" +
+                        "Durum: " + durum + "<br><br>");
+
+            
+
+        }
+
+    }
+
+    else if(gir==2){
+        var tcno=prompt("TC GİRİNİZ");
+        
+        
+
+        var indis=tckimlik.indexOf(tcno); 
+        if (indis!==-1){
+            var ortalama=((vize[indis]*40/100)+(final[indis]*60/100));
+            var durum="";
+
+            if(ortalama>=50){
+                durum="GEÇTİNİZ";
+                
+            }
+            else{
+                durum="KALDINIZ";
+            }
+            
+            document.write("TC : " + tckimlik[indis] + "<br>" +
+                        "Adı: " + ad[indis] + "<br>" +
+                        "Soyadı: " + soyad[indis] + "<br>" +
+                        "E-mail: " + email[indis] + "<br>" +
+                        "Telefon: " + telefon[indis] + "<br>" +
+                        "Bölüm: " + bolum[indis] + "<br>" +
+                        "Doğum Yeri: " + dyeri[indis] + "<br>" +
+                        "Not Ortalaması: " + ortalama.toFixed(2) + "<br>" +
+                        "Durum: " + durum + "<br><br>");
+        }
+        else{
+            document.write("<bold>Ogrenci Bulunamadı.</bold>");
+        }
+        
+    }
+
+    else if(gir==3){
+            var tckimm=prompt("TC");
+            var adii=prompt("ADI");
+            var soyadii=prompt("SOYADI");
+            var emailii=prompt("E-MAİLİ");
+            var telii=prompt("TEL");
+            var bolumuu=prompt("BOLUMU");
+            var dyerii=prompt("DYERİ");
+            var vizesii=parseInt(prompt("VİZESİ"));
+            var finalii=parseInt(prompt("FİNALİ"));
+            
+
+        tckimlik.unshift(tckimm);
+        ad.unshift(adii);
+        soyad.unshift(soyadii);
+        email.unshift(emailii);
+        telefon.unshift(telii);
+        bolum.unshift(bolumuu);
+        dyeri.unshift(dyerii);
+        vize.unshift(vizesii);
+        final.unshift(finalii);
+
+        document.write("Tüm Öğrenciler Listeleniyor");
+            
+
+        for (var deg=0; deg<tckimlik.length;deg++){
+            var notOrtalamasi=((vize[deg]*40/100)+(final[deg]*60/100));
+            var durum="";
+
+            if (notOrtalamasi>=50){
+                durum="GEÇTİNİZ";
+
+            }
+            else{
+                durum="KALDINIZ";
+            }
+
+            document.write(  "TC : " + tckimlik[deg] + "<br>" +
+                        "Adı: " + ad[deg] + "<br>" +
+                        "Soyadı: " + soyad[deg] + "<br>" +
+                        "E-mail: " + email[deg] + "<br>" +
+                        "Telefon: " + telefon[deg] + "<br>" +
+                        "Bölüm: " + bolum[deg] + "<br>" +
+                        "Doğum Yeri: " + dyeri[deg] + "<br>" +
+                        "Not Ortalaması: " + notOrtalamasi.toFixed(2) + "<br>" +
+                        "Durum: " + durum + "<br><br>");
+
+            
+        }
+        
+    }
+
+    
+}
+
+giris();
+
+</script>
+</head>
+<body>
+</body>
+</html>
